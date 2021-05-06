@@ -6,12 +6,12 @@ import 'page/loginPage.dart';
 void main() {
   runApp(MaterialApp(
     debugShowCheckedModeBanner: true,
-    home: Home(),
-    theme: ThemeData(
-        appBarTheme: AppBarTheme(
-            backgroundColor: Colors.green, brightness: Brightness.dark)),
+    // home: Home(),
+    themeMode: ThemeMode.dark,
+    darkTheme: ThemeData(brightness: Brightness.light),
+    theme: ThemeData(primarySwatch: Colors.deepPurple),
     routes: {
-      "/": (context) => Home(),
+      "/": (context) => LoginPage(),
       "/login": (context) => LoginPage(),
     },
   ));
