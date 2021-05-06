@@ -1,13 +1,19 @@
 import 'package:flutter/material.dart';
+import 'package:tutorial/page/loginPage.dart';
+import 'page/homeBody.dart';
+import 'page/loginPage.dart';
 
 void main() {
   runApp(MaterialApp(
-    home: Home(),
     debugShowCheckedModeBanner: true,
+    home: Home(),
     theme: ThemeData(
         appBarTheme: AppBarTheme(
-      backgroundColor: Colors.green,
-    )),
+            backgroundColor: Colors.green, brightness: Brightness.dark)),
+    routes: {
+      "/": (context) => Home(),
+      "/login": (context) => LoginPage(),
+    },
   ));
 }
 
@@ -16,14 +22,11 @@ class Home extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("first build"),
+        title: Text("First build"),
         centerTitle: true,
       ),
-      body: Center(
-        child: Container(
-          child: Text("hello world"),
-        ),
-      ),
+      body: HomeBody(),
+      drawer: Drawer(),
     );
   }
 }
