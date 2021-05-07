@@ -7,8 +7,10 @@ import 'routes/routes.dart';
 void main() {
   runApp(
     MaterialApp(
-      debugShowCheckedModeBanner: true,
+      color: Colors.white,
+      debugShowCheckedModeBanner: false,
       // home: Home(),
+
       themeMode: ThemeMode.dark,
       darkTheme: ThemeData(brightness: Brightness.light),
       theme: ThemeData(
@@ -17,8 +19,8 @@ void main() {
       ),
       routes: {
         "/": (context) => LoginPage(),
-        MyRoutes.HomeRoute: (context) => Home(),
-        MyRoutes.LoginRoute: (context) => LoginPage(),
+        MyRoutes.homeRoute: (context) => Home(),
+        MyRoutes.loginRoute: (context) => LoginPage(),
       },
     ),
   );
@@ -30,6 +32,7 @@ class Home extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text("First build"),
+        backgroundColor: Colors.deepPurple,
         centerTitle: true,
       ),
       body: HomeBody(),
