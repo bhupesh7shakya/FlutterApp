@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:tutorial/Widget/mainDrawer.dart';
+import 'package:tutorial/models/catalog.dart';
+import 'package:tutorial/Widget/itemView.dart';
 
 // ignore: must_be_immutable
 class HomeBody extends StatelessWidget {
@@ -7,6 +9,7 @@ class HomeBody extends StatelessWidget {
   int number = 2;
   @override
   Widget build(BuildContext context) {
+    final dummyList = List.generate(50, (index) => CatalogModel.product[0]);
     return Scaffold(
       appBar: AppBar(
         title: Text(
@@ -18,10 +21,11 @@ class HomeBody extends StatelessWidget {
         iconTheme: IconThemeData(color: Colors.black),
         centerTitle: true,
       ),
-      body: Center(
-        child: Container(
-          child: Text("Welcome to $name app at day $number"),
-        ),
+      body: ListView.builder(
+        itemCount: dummyList.length,
+        itemBuilder: (context, index) {
+          return ItemWidget(item: dummyList[index]);
+        },
       ),
       drawer: MainDrawers(),
     );
