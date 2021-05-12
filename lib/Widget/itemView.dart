@@ -12,11 +12,11 @@ class ItemWidget extends StatelessWidget {
         onTap: () {
           print(item.name);
         },
-        leading: Image.network(item.imgUrl),
+        leading: Image.network(item.image),
         title: Text(item.name),
         subtitle: Text(item.desc),
         trailing: Text(
-          "Rs"+item.price.toString(),
+          "Rs" + item.price.toString(),
           style:
               TextStyle(color: Colors.deepPurple, fontWeight: FontWeight.bold),
         ),

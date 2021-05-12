@@ -18,8 +18,9 @@ class Home extends StatelessWidget {
       themeMode: ThemeMode.dark,
       theme: MyTheme.lightTheme(context),
       darkTheme: MyTheme.darkTheme(context),
+      // initialRoute: Home(),
       routes: {
-        "/": (context) => LoginPage(),
+        "/": (context) => HomeBody(),
         MyRoutes.homeRoute: (context) => HomeBody(),
         MyRoutes.loginRoute: (context) => LoginPage(),
       },
